@@ -1,0 +1,11 @@
+vim /etc/systemd/system/alertmanager.service
+
+[Unit]
+Description=Alert Manager service.
+
+[Service]
+WorkingDirectory=/opt/alertmanager
+ExecStart=/opt/alertmanager/alertmanager
+
+[Install]
+WantedBy=multi-user.target

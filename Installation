@@ -1,0 +1,44 @@
+## Promethues installation
+
+https://prometheus.io/download/
+
+## To download promotheus package
+https://github.com/prometheus/prometheus/releases/download/v2.51.0-rc.0/prometheus-2.51.0-rc.0.linux-amd64.tar.gz
+
+
+
+## To download Node Exporter
+https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
+
+
+## To install grfana 
+wget -q -O gpg.key https://rpm.grafana.com/gpg.key
+
+sudo rpm --import gpg.key
+
+
+vim /etc/yum.repos.d/grafana.repo
+
+[grafana]
+name=grafana
+baseurl=https://rpm.grafana.com
+repo_gpgcheck=1
+enabled=1
+gpgcheck=1
+gpgkey=https://rpm.grafana.com/gpg.key
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+
+
+sudo dnf install grafana -y
+
+systemctl daemon-reload
+
+systemctl start grafana-server
+
+systemctl enable grafana-server
+
+
+
+## To install alert manager
+https://github.com/prometheus/alertmanager/releases/download/v0.27.0/alertmanager-0.27.0.linux-amd64.tar.gz

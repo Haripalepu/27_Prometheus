@@ -1,0 +1,11 @@
+To run Nodesexporter as a service:
+vim /etc/systemd/system/node_exporter.service
+
+[Unit]
+Description=Prometheues service file.
+
+[Service]
+ExecStart=/opt/node_exporter/node_exporter
+
+[Install]
+WantedBy=multi-user.target
